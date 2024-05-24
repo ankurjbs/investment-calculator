@@ -16,9 +16,10 @@ function App() {
     setUserInput(prevInput => {
       return {
          ...prevInput,
-          [inputIdentifier]:newValue
+          [inputIdentifier]:+newValue
         }        
       });
+      // we are adding + symbol before newValue because initialy it takes as string after using + symbol it converts into integer
       console.log(userInput);
   }
 
@@ -26,7 +27,7 @@ function App() {
     <main>
       <Header />
       <Fields userInput={userInput} onChange={handleChange}/>
-      <Result />
+      <Result input={userInput} />
     </main>
   );
 }
